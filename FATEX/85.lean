@@ -3,7 +3,7 @@ import Mathlib
 /--
 Definition of a Euclidean norm taking value in \(\mathbb{N}\).
 -/
-class EuclideanNormNat (R : Type) [CommRing R] extends Nontrivial R where
+class EuclideanNormNat1 (R : Type) [CommRing R] extends Nontrivial R where
   quotient : R → R → R
   quotient_zero : ∀ a, quotient a 0 = 0
   remainder : R → R → R
@@ -15,5 +15,5 @@ class EuclideanNormNat (R : Type) [CommRing R] extends Nontrivial R where
 /--
 There exists a transfinite Euclidean domain such that it cannot be given a Euclidean norm taking value in \(\mathbb{N}\).-/
 theorem exist_euclideanDomain_not_norm_nat :
-    ∃ (R : Type) (_ : EuclideanDomain R), IsEmpty (EuclideanNormNat R) := by
+    ∃ (R : Type) (_ : EuclideanDomain R), IsEmpty (EuclideanNormNat1 R) := by
   sorry
